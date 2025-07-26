@@ -1,9 +1,9 @@
-Запуск проекта:
+### Запуск проекта:
 
 1) Клонировать репозиторий
 ```
-git clone <url>
-cd test_app
+git clone https://github.com/delawer33/uptrader_test
+cd uptrader_test
 ```
 
 2) Создать виртуальное окружение (python3.12.3)
@@ -14,18 +14,33 @@ python3 -m venv .venv
 3) Устанавливаем зависимости
 ```
 pip install -r requirements.txt
+```
+
+4) Переходим в приложение
+```
 cd test_app
 ```
 
+5) Применяем миграции
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
 
-4) Если нужно, создаем тестовые объекты в БД
+6) Если нужно, создаем тестовые объекты в БД
 ```
 python3 manage.py generate_menu_test_data
 ```
 
-5) Запускаем сервер
+7) Запускаем сервер
 ```
 python3 manage.py runserver
 ```
 
+### Тесты
 
+В `test_app/menu/tests` есть тесты для приложения `menu`, запуск:
+
+```
+python3 manage.py test menu
+```
