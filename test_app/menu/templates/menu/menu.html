@@ -1,0 +1,6 @@
+<h3>Меню {{ menu_name }}:</h3>
+<ul>
+    {% for item in root_items %}
+        {% include "menu/menu_item.html" %}
+    {% endfor %}
+</ul>

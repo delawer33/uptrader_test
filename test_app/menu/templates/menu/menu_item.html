@@ -1,0 +1,20 @@
+<li>
+    <a href="{{ item.get_url }}"
+        {% if item.is_active %}
+            class="active"
+            style="background-color:green"
+        {% endif %}
+    >
+        {{ item.name }}
+    </a>
+    
+    {% if item.children_list and item.is_expanded %}
+        <ul>
+            {% for child in item.children_list %}
+                {% with item=child %}
+                    {% include "menu/menu_item.html" %}
+                {% endwith %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
