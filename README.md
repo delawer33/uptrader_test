@@ -37,6 +37,13 @@ python3 manage.py generate_menu_test_data
 python3 manage.py runserver
 ```
 
+### Через docker-compose
+
+```
+sudo docker compose up --build
+```
+Если нужно запустить проет с postgres, можно в `docker-compose.yaml` раскомментировать сревис `db` и в `test_app/test_app/settings.py` раскомментировать настройку `DATABASES` с postgres. 
+
 ### Тесты
 
 В `test_app/menu/tests` есть тесты для приложения `menu`, запуск:
